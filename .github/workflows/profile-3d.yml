@@ -1,0 +1,54 @@
+name: GitHub-Profile-3D-Contrib
+
+on:
+  schedule:
+    - cron: '0 18 * * *' 
+  workflow_dispatch:     
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: generate-github-profile-3d-contrib
+    steps:
+      - uses: actions/checkout@v3
+      - uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+
+      - name: Clean up SVGs
+        run: |
+          python3 - << 'EOF'
+          import re, glob
+          for path in glob.glob('profile-3d-contrib/*.svg'):
+              with open(path, 'r', encoding='utf-8') as f:
+                  content = f.read()
+
+              start_str = '<g transform="translate(40, 520)">'
+              if start_str in content:
+                  start_idx = content.find(start_str)
+                  depth, end_idx = 0, start_idx
+                  while end_idx < len(content):
+                      if content.startswith('<g', end_idx):
+                          depth += 1
+                      elif content.startswith('</g>', end_idx):
+                          depth -= 1
+                          if depth == 0:
+                              end_idx += 4
+                              break
+                      end_idx += 1
+                  content = content[:start_idx] + content[end_idx:]
+
+              content = re.sub(r'<g transform="translate\(608, 802\), scale\(2\)">.*?</g>', '', content)
+              content = re.sub(r'<g transform="translate\(736, 802\), scale\(2\)">.*?</g>', '', content)
+              content = re.sub(r'<text[^>]*x="(650|772)"[^>]*>.*?</text>', '', content)
+
+              with open(path, 'w', encoding='utf-8') as f:
+                  f.write(content)
+          EOF
+
+      - name: Deploy to output branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./profile-3d-contrib
+          publish_branch: output
