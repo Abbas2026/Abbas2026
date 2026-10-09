@@ -47,7 +47,7 @@
 ### Contribution Activity
 
 <p align="center">
-  <img width="48.5%" src="https://github-readme-stats.vercel.app/api?username=Abbas2026&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=tokyonight" alt="GitHub Stats" />
+  <img width="48.5%" src="https://github-readme-stats-zeta-rouge-92.vercel.app/api?username=Abbas2026&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=tokyonight" alt="GitHub Stats" />
   <img width="48.5%" src="https://streak-stats.demolab.com/?user=Abbas2026&theme=tokyonight&hide_border=true" alt="Contribution Streak" />
 </p>
 
