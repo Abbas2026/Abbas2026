@@ -2,11 +2,6 @@
   <img src="./observatory.svg" alt="Observatory Telemetry" width="100%" />
 </p>
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=Abbas2026&color=1f6feb&style=flat-square&label=PROFILE+VIEWS" alt="Profile Views" />
-  <img src="https://img.shields.io/github/followers/Abbas2026?label=Followers&style=flat-square&color=21262d" alt="Followers" />
-</p>
-
 ### Overview
 
 - **Education:** Computer Engineering @ Isfahan University of Technology (IUT)
@@ -47,8 +42,8 @@
 ### Contribution Activity
 
 <p align="center">
-  <img width="48.5%" src="https://github-readme-stats-zeta-rouge-92.vercel.app/api?username=Abbas2026&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=tokyonight" alt="GitHub Stats" />
-  <img width="48.5%" src="https://streak-stats.demolab.com/?user=Abbas2026&theme=tokyonight&hide_border=true" alt="Contribution Streak" />
+  <img width="415" src="https://github-readme-stats-zeta-rouge-92.vercel.app/api?username=Abbas2026&show_icons=true&include_all_commits=true&count_private=true&hide_border=true&theme=tokyonight" alt="GitHub Stats" />
+  <img width="415" src="https://streak-stats.demolab.com/?user=Abbas2026&theme=tokyonight&hide_border=true" alt="Contribution Streak" />
 </p>
 
 ---
